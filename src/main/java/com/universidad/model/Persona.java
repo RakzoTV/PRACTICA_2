@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 
 @Getter // Genera un getter para todos los campos de la clase
 @Setter // Genera un setter para todos los campos de la clase
-//@Data
+// @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
@@ -29,18 +29,23 @@ public abstract class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Generación automática del ID
     private Long id;
 
-    @Version
-    private Long version; // Campo para manejar la versión de la entidad, útil para el control de concurrencia
+    /*
+     * @Version
+     * private Long version; // Campo para manejar la versión de la entidad, útil
+     * para el control de concurrencia
+     */
 
     @Column(nullable = false, length = 50) // Columna no nula con longitud máxima de 50 caracteres
-    // El nombre de la persona no puede ser nulo y tiene una longitud máxima de 50 caracteres
+    // El nombre de la persona no puede ser nulo y tiene una longitud máxima de 50
+    // caracteres
     @Basic(optional = false) // Columna no nula
     @Length(min = 3, max = 50) // Validación de longitud
     private String nombre;
 
     @Column(nullable = false, length = 50) // Columna no nula con longitud máxima de 50 caracteres
     @Length(min = 3, max = 50) // Validación de longitud
-    // El apellido de la persona no puede ser nulo y tiene una longitud máxima de 50 caracteres
+    // El apellido de la persona no puede ser nulo y tiene una longitud máxima de 50
+    // caracteres
     @Basic(optional = false) // Columna no nula
     private String apellido;
 

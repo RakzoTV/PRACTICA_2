@@ -77,8 +77,9 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**", "/api/public/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                .requestMatchers("/api/docentes/**").hasAnyRole("ADMIN", "DOCENTE")
-                .requestMatchers("/api/estudiantes/**").hasAnyRole("ADMIN", "DOCENTE", "ESTUDIANTE")
+                .requestMatchers("/api/materias/**").hasAnyRole("ADMIN", "ESTUDIANTE", "DOCENTE")
+                .requestMatchers("/api/inscripciones/**").hasAnyRole("ADMIN", "ESTUDIANTE")
+                .requestMatchers("/api/estudiantes/**").hasAnyRole("ADMIN", "DOCENTE")
                 .anyRequest().authenticated()
             );
 
