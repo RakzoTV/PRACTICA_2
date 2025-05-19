@@ -41,7 +41,7 @@ El sistema utiliza control de acceso basado en roles, definidos en la configurac
 
 - **Públicos (sin autenticación):**
   - `/api/auth/**` — Endpoints de autenticación (login, registro, etc.)
-  - 
+    
 - **Solo ADMIN:**
   - `/api/admin/**` — Funcionalidades administrativas avanzadas
 
